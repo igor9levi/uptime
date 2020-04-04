@@ -1,0 +1,23 @@
+{{#if this.model}}
+    <table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+        <th scope="col">Service</th>
+        <th scope="col">Status</th>
+        <th scope="col">Rolling Uptime for 30 days</th>
+        <th scope="col">Other</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each this.model as |model|}}
+        {{!-- this should be component --}}
+            <tr>
+            <td>{{model.alias}}</td>
+            <td>{{model.down}}</td>
+            <td>{{model.uptime}}%</td>
+            <td>Details</td>
+            </tr>
+        {{/each}}
+    </tbody>
+    </table>
+{{/if}}
