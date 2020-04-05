@@ -13,11 +13,7 @@ export default class CheckAdapter extends JSONAPIAdapter {
     }
   }
 
-  pathForType(type) {
-    console.log(type)
-    if (ENV.PATH_FOR_TYPE) {
-      return ENV.PATH_FOR_TYPE;
-    }
+  pathForType() {
+    return ENV.PATH_FOR_TYPE;
   }
-  
 }
