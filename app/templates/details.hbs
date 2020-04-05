@@ -1,0 +1,42 @@
+<LinkTo @route="index">Go Back</LinkTo>
+
+<div>Details for service: {{this.model.alias}}</div>
+<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">
+                <TableHead 
+                    @name="Icon" 
+                />
+            </th>
+            <th scope="col">
+                <TableHead @name="URL" />
+            </th>
+            <th scope="col">
+                <TableHead 
+                    @name="Uptime percentage" 
+                />
+            </th>
+            {{#if this.model.down_since}}
+                <th scope="col">
+                    <TableHead @name="Down Since" />
+                </th>
+            {{/if}}
+            <th scope="col">
+                <TableHead @name="Description" />
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src={{this.model.favicon_url}} alt="icon" width="30px" height="30px" /></td>
+            <td>{{this.model.url}}</td>
+            <td>{{this.model.uptime}}%</td>
+            {{#if this.model.down_since}}
+                <td>{{this.model.down_since}}</td>
+            {{/if}}
+            <td>Details</td>
+        </tr>
+    </tbody>
+</table>
+

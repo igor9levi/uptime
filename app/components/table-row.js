@@ -26,4 +26,22 @@ export default class TableRowComponent extends Component {
     get url () {
         return `https://updown.io/${this.args.model.token}`;
     }
+
+    get detailsModel () {
+        const uptime = this.uptime;
+        const {
+            token,
+            favicon_url,
+            url,
+            down_since
+        } = this.args.model;
+        
+        return {
+            token,
+            favicon_url,
+            url,
+            down_since,
+            uptime
+        };
+    }
 }

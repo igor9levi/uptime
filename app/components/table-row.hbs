@@ -2,5 +2,5 @@
     <td><a target="_blank" rel="noopener noreferrer" href={{this.url}}>{{this.alias}}</a></td>
     <td>{{this.status}}</td>
     <td>{{this.uptime}}%</td>
-    <td>Details</td>
+    <td><LinkTo @route="details"  @model={{this.detailsModel}}>Details</LinkTo></td>
 </tr>

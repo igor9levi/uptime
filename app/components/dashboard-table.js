@@ -20,7 +20,7 @@ export default class DashboardTableComponent extends Component {
 
     @action
     sortAction (sortCategory) {
-        set(this, 'sortCategory', sortCategory);
-        set(this, 'toggleOrder', !this.toggleOrder);
+        this.sortCategory = sortCategory;
+        this.toggleOrder = !this.toggleOrder;
     }
 }
