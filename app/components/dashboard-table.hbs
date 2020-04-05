@@ -1,0 +1,15 @@
+<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+        <th scope="col">Service</th>
+        <th scope="col">Status</th>
+        <th scope="col">Rolling Uptime for 30 days</th>
+        <th scope="col">Other</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each this.rows as |model|}}
+            <TableRow @model={{model}} />
+        {{/each}}
+    </tbody>
+</table>
