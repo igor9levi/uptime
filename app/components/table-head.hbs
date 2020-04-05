@@ -1,0 +1,12 @@
+{{#if @click}}
+    <div {{on "click" (fn @click @category)}}>
+        {{@name}}
+        {{#if (eq @active @category)}}
+            <i class="arrow {{@direction}}"></i>
+        {{/if}}
+    </div>
+{{else}}
+    <div>
+        {{@name}}
+    </div>
+{{/if}}
