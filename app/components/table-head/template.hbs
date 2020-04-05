@@ -1,5 +1,5 @@
 {{#if @click}}
-    <div {{on "click" (fn @click @category)}}>
+    <div {{on "click" (fn @click @category)}} role="button">
         {{@name}}
         {{#if (eq @active @category)}}
             <i class="arrow {{@direction}}"></i>
