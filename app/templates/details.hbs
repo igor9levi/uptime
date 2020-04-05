@@ -19,9 +19,11 @@
                         Down Since
                     </th>
                 {{/if}}
-                <th scope="col">
-                    Description
-                </th>
+                {{#if this.model.description}}
+                    <th scope="col">
+                        Description
+                    </th>
+                {{/if}}
             </tr>
         </thead>
         <tbody>
@@ -32,7 +34,9 @@
                 {{#if this.model.down_since}}
                     <td>{{this.model.down_since}}</td>
                 {{/if}}
-                <td>{{this.model.description}}</td>
+                {{#if this.model.description}}
+                    <td>{{this.model.description}}</td>
+                {{/if}}
             </tr>
         </tbody>
     </table>
