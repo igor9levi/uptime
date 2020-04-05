@@ -1,35 +1,37 @@
-<table class="table table-bordered">
-    <thead class="thead-light">
-        <tr>
-        <th scope="col">
-            <TableHead 
-                @name="Service" 
-                @click={{this.sortAction}} 
-                @category="alias"
-                @active={{this.sortCategory}}
-                @direction={{this.direction}}
-            />
-        </th>
-        <th scope="col">
-            <TableHead @name="Status" />
-        </th>
-        <th scope="col">
-            <TableHead 
-                @name="Rolling Uptime for 30 days" 
-                @click={{this.sortAction}} 
-                @category="uptime"
-                @active={{this.sortCategory}}
-                @direction={{this.direction}}
-            />
-        </th>
-        <th scope="col">
-            <TableHead @name="Other" />
-        </th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each this.rows as |model|}}
-            <TableRow @model={{model}} />
-        {{/each}}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+            <th scope="col">
+                <TableHead 
+                    @name="Service" 
+                    @click={{this.sortAction}} 
+                    @category="alias"
+                    @active={{this.sortCategory}}
+                    @direction={{this.direction}}
+                />
+            </th>
+            <th scope="col">
+                <TableHead @name="Status" />
+            </th>
+            <th scope="col">
+                <TableHead 
+                    @name="Rolling Uptime for 30 days" 
+                    @click={{this.sortAction}} 
+                    @category="uptime"
+                    @active={{this.sortCategory}}
+                    @direction={{this.direction}}
+                />
+            </th>
+            <th scope="col">
+                <TableHead @name="Other" />
+            </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each this.rows as |model|}}
+                <TableRow @model={{model}} />
+            {{/each}}
+        </tbody>
+    </table>
+</div>

@@ -29,6 +29,7 @@ export default class TableRowComponent extends Component {
 
     get detailsModel () {
         const uptime = this.uptime;
+        const alias = this.alias;
         const {
             token,
             favicon_url,
@@ -38,6 +39,7 @@ export default class TableRowComponent extends Component {
         
         return {
             token,
+            alias,
             favicon_url,
             url,
             down_since,

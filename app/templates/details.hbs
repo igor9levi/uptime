@@ -1,6 +1,6 @@
 <LinkTo @route="index">Go Back</LinkTo>
 
-<div>Details for service: {{this.model.alias}}</div>
+<div>Details for service: <strong>{{this.model.alias}}</strong></div>
 <table class="table table-bordered">
     <thead class="thead-light">
         <tr>
@@ -35,7 +35,7 @@
             {{#if this.model.down_since}}
                 <td>{{this.model.down_since}}</td>
             {{/if}}
-            <td>Details</td>
+            <td>{{this.model.description}}</td>
         </tr>
     </tbody>
 </table>
