@@ -1,38 +1,40 @@
-<LinkTo @route="index">Go Back</LinkTo>
+<LinkTo class="btn btn-primary" @route="index">Go Back</LinkTo>
 
-<div>Details for service: <strong>{{this.model.alias}}</strong></div>
-<table class="table table-bordered">
-    <thead class="thead-light">
-        <tr>
-            <th scope="col">
-                Icon
-            </th>
-            <th scope="col">
-                URL
-            </th>
-            <th scope="col">
-                Uptime percentage
-            </th>
-            {{#if this.model.down_since}}
+<div class="detail-info">Details for service: <strong>{{this.model.alias}}</strong></div>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
                 <th scope="col">
-                    Down Since
+                    Icon
                 </th>
-            {{/if}}
-            <th scope="col">
-                Description
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><img src={{this.model.favicon_url}} alt="icon" width="30px" height="30px" /></td>
-            <td><a target="_blank" rel="noopener noreferrer" href={{this.model.url}}>{{this.model.url}}</a></td>
-            <td>{{this.model.uptime}}%</td>
-            {{#if this.model.down_since}}
-                <td>{{this.model.down_since}}</td>
-            {{/if}}
-            <td>{{this.model.description}}</td>
-        </tr>
-    </tbody>
-</table>
+                <th scope="col">
+                    URL
+                </th>
+                <th scope="col">
+                    Uptime percentage
+                </th>
+                {{#if this.model.down_since}}
+                    <th scope="col">
+                        Down Since
+                    </th>
+                {{/if}}
+                <th scope="col">
+                    Description
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src={{this.model.favicon_url}} alt="icon" width="30px" height="30px" /></td>
+                <td><a target="_blank" rel="noopener noreferrer" href={{this.model.url}}>{{this.model.url}}</a></td>
+                <td>{{this.model.uptime}}%</td>
+                {{#if this.model.down_since}}
+                    <td>{{this.model.down_since}}</td>
+                {{/if}}
+                <td>{{this.model.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 

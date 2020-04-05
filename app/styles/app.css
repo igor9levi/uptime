@@ -19,3 +19,7 @@ transform: rotate(45deg);
 .clickable:hover {
   cursor: pointer;
 }
+
+.detail-info {
+  margin: 20px 0;
+}

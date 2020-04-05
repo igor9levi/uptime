@@ -30,10 +30,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     
-    // ENV.API_KEY = 'ro-pz3x1zy4ae63yhygraqe';
-    ENV.API_KEY = 'ro-7ySA8up3XmpR62WRSB64';
-    // ENV.CHECKS_API = 'https://updown.io/api/checks?api-key=ro-pz3x1zy4ae63yhygraqe';
-    ENV.CHECKS_API = '/api/checks.json';
+    // ENV.API_KEY = 'ro-7ySA8up3XmpR62WRSB64'; // public
+    ENV.PATH_FOR_TYPE = '/api/checks.json';
     ENV.DESCRIPTION_API = 'https://gist.githubusercontent.com/Rio517/c523873cd4495456a88cac8f1860461b/raw/81667cb58db57cae093092748225c3a98a43ee1e/check-description.json';
   }
 
@@ -52,7 +50,9 @@ module.exports = function(environment) {
   if (environment === 'production') {
     // here you can enable a production-specific feature
     ENV.API_KEY = 'ro-pz3x1zy4ae63yhygraqe';
-    ENV.CHECKS_API = '/api/checks';
+    ENV.CHECKS_HOST = 'https://updown.io';
+    ENV.NAMESPACE = 'api';
+    ENV.PATH_FOR_TYPE = 'checks';
     ENV.DESCRIPTION_API = 'https://gist.githubusercontent.com/Rio517/c523873cd4495456a88cac8f1860461b/raw/81667cb58db57cae093092748225c3a98a43ee1e/check-description.json';
   }
 
