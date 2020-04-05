@@ -15,3 +15,7 @@
 transform: rotate(45deg);
 -webkit-transform: rotate(45deg);
 }
+
+.clickable:hover {
+  cursor: pointer;
+}

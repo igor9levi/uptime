@@ -2,29 +2,23 @@
     <table class="table table-bordered">
         <thead class="thead-light">
             <tr>
-            <th scope="col">
-                <TableHead 
-                    @name="Service" 
-                    @click={{this.sortAction}} 
-                    @category="alias"
-                    @active={{this.sortCategory}}
-                    @direction={{this.direction}}
-                />
+            <th class="clickable" scope="col" {{on "click" (fn this.sortAction "alias")}} role="button">
+                Service
+                {{#if (eq this.sortCategory "alias")}}
+                    <i class="arrow {{this.direction}}"></i>
+                {{/if}}
             </th>
             <th scope="col">
-                <TableHead @name="Status" />
+                Status
+            </th>
+            <th class="clickable" scope="col" {{on "click" (fn this.sortAction "uptime")}} role="button">
+                Rolling Uptime for 30 days
+                {{#if (eq this.sortCategory "uptime")}}
+                    <i class="arrow {{this.direction}}"></i>
+                {{/if}}
             </th>
             <th scope="col">
-                <TableHead 
-                    @name="Rolling Uptime for 30 days" 
-                    @click={{this.sortAction}} 
-                    @category="uptime"
-                    @active={{this.sortCategory}}
-                    @direction={{this.direction}}
-                />
-            </th>
-            <th scope="col">
-                <TableHead @name="Other" />
+                
             </th>
             </tr>
         </thead>
