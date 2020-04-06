@@ -15,6 +15,8 @@ export default class DashboardTableComponent extends Component {
         if (this.toggleOrder) {
             return A(this.args.model).sortBy(this.sortCategory);
         }
+        // More performant would be to use sort(), but for breavity
+        // on this scale is acceptable
         return A(this.args.model).sortBy(this.sortCategory).reverse();
     }
 
