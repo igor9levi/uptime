@@ -6,21 +6,47 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | table-row', function(hooks) {
   setupRenderingTest(hooks);
 
+  hooks.beforeEach(function() {
+    this.model = {
+      "token": "token1",
+      "url": "https://test.com/token1",
+      "alias": "Token 1",
+      "uptime": 99.836,
+      "down": false,
+      "down_since": null,
+      "error": null,
+      "favicon_url": "https://test.com/token1.jpg",
+    };
+  });
+
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    await render(hbs`<TableRow @model={{this.model}} />`);
 
-    await render(hbs`<TableRow />`);
+    assert.dom('.qa-table-row').exists();
+  });
 
-    assert.equal(this.element.textContent.trim(), '');
+  test('it renders correct data', async function(assert) {
+    await render(hbs`<TableRow @model={{this.model}} />`);
 
-    // Template block usage:
-    await render(hbs`
-      <TableRow>
-        template block text
-      </TableRow>
-    `);
+    assert.dom('.qa-service-column a').hasText('Token 1');
+    assert.dom('.qa-service-column a').hasAttribute('href', 'https://updown.io/token1');
+    assert.dom('.qa-status-column').hasText('UP');
+    assert.dom('.qa-uptime-column').hasText('99.84%');
+    // assert.dom('.qa-details-column a').hasAttribute('href', 'https://updown.io/token1');
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+  });
+
+  test('it renders correct uptime', async function(assert) {
+    this.model.uptime = 80;
+    await render(hbs`<TableRow @model={{this.model}} />`);
+
+    assert.dom('.qa-uptime-column').hasText('80%');
+  });
+
+  test('it renders correct status', async function(assert) {
+    this.model.down = true;
+    await render(hbs`<TableRow @model={{this.model}} />`);
+
+    assert.dom('.qa-status-column').hasText('DOWN');
   });
 });

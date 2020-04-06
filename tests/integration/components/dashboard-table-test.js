@@ -62,14 +62,6 @@ module('Integration | Component | dashboard-table', function(hooks) {
     assert.dom('.qa-uptime-icon').doesNotExist();
   });
 
-  test('it renders correct uptime percent', async function(assert) {
-    await render(hbs`<DashboardTable @model={{this.model}} />`);
-    
-    assert.dom('.qa-table-row:first-child .qa-uptime-column').containsText('99.84%');
-    assert.dom('.qa-table-row:nth-child(2) .qa-uptime-column').containsText('100%');
-    assert.dom('.qa-table-row:nth-child(3) .qa-uptime-column').containsText('85.72%');
-  });
-
   test('it renders correct order on sort service column', async function(assert) {
     await render(hbs`<DashboardTable @model={{this.model}} />`);
 
