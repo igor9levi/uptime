@@ -1,20 +1,20 @@
-<div class="table-responsive">
+<div class="qa-dashboard-table table-responsive">
     <table class="table table-bordered">
         <thead class="thead-light">
             <tr>
-            <th class="clickable" scope="col" {{on "click" (fn this.sortAction "alias")}} role="button">
+            <th class="qa-service clickable" scope="col" {{on "click" (fn this.sortAction "alias")}} role="button">
                 Service
                 {{#if (eq this.sortCategory "alias")}}
-                    <i class="arrow {{this.direction}}"></i>
+                    <i class="qa-service-icon arrow {{this.direction}}"></i>
                 {{/if}}
             </th>
             <th scope="col">
                 Status
             </th>
-            <th class="clickable" scope="col" {{on "click" (fn this.sortAction "uptime")}} role="button">
+            <th class="qa-uptime clickable" scope="col" {{on "click" (fn this.sortAction "uptime")}} role="button">
                 Rolling Uptime for 30 days
                 {{#if (eq this.sortCategory "uptime")}}
-                    <i class="arrow {{this.direction}}"></i>
+                    <i class="qa-uptime-icon arrow {{this.direction}}"></i>
                 {{/if}}
             </th>
             <th scope="col">
