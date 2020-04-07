@@ -1,5 +1,5 @@
 <div class="detail-info">Details for service: <strong>{{@model.alias}}</strong></div>
-<div class="table-responsive">
+<div class="qa-show-details table-responsive">
     <table class="table table-bordered">
         <thead class="thead-light">
             <tr>
@@ -12,7 +12,7 @@
                 <th scope="col">
                     Uptime percentage
                 </th>
-                {{#if @model.down_since}}
+                {{#if @model.down}}
                     <th scope="col">
                         Down Since
                     </th>
@@ -28,12 +28,12 @@
             <tr>
                 <td><img src={{@model.favicon_url}} alt="icon" width="30px" height="30px" /></td>
                 <td><a target="_blank" rel="noopener noreferrer" href={{@model.url}}>{{@model.url}}</a></td>
-                <td>{{this.uptime}}%</td>
-                {{#if @model.down_since}}
-                    <td>{{@model.down_since}}</td>
+                <td class="qa-uptime">{{this.uptime}}%</td>
+                {{#if @model.down}}
+                    <td class="qa-down-since">{{@model.down_since}}</td>
                 {{/if}}
                 {{#if @model.description}}
-                    <td>{{@model.description}}</td>
+                    <td class="qa-description">{{@model.description}}</td>
                 {{/if}}
             </tr>
         </tbody>
