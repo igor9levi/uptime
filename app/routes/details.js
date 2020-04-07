@@ -7,15 +7,16 @@ export default class DetailsRoute extends Route {
     const check = await this.store.findAll('check', { backgroundReload: false });
     let model = check.find(item => item.id === params.id);
 
-    const { descriptions } = await this.store.queryRecord('detail', {});
-    model.description = descriptions[params.id];
+    const result = await this.store.findAll('detail', {backgroundReload: false});
+    const { descriptions } = result.firstObject;
 
+    model.description = descriptions[params.id];
     return model;
   }
 
   @action
     error (error) {
-    console.log('Error handling details route', error); // Redirect to error page
+    console.warn('Error handling details route', error); // Redirect to error page
     return false;
   }
 }

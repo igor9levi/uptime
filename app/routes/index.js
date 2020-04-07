@@ -8,7 +8,7 @@ export default class IndexRoute extends Route {
 
   @action
   error(error) {
-    console.log(error); // Redirect to error page
+    console.warn(error); // Redirect to error page
     return false;
   }
 }
