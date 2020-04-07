@@ -32,8 +32,6 @@ module('Integration | Component | table-row', function(hooks) {
     assert.dom('.qa-service-column a').hasAttribute('href', 'https://updown.io/token1');
     assert.dom('.qa-status-column').hasText('UP');
     assert.dom('.qa-uptime-column').hasText('99.84%');
-    // assert.dom('.qa-details-column a').hasAttribute('href', 'https://updown.io/token1');
-
   });
 
   test('it renders correct uptime', async function(assert) {
